@@ -2,8 +2,8 @@
 	 <style>
 		td{
 			border: 1px solid black;
-			height: 40px;
-			width: 18%;
+			height: 20px;
+			width: 20px;
 		  }
 		  
 		 .pintado{
@@ -18,19 +18,28 @@
 		$abc = ["","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 		
 		echo "<table>";
-			
+			for($i=0;$i <= $cols;$i++){
+				if($i == 0){
+					echo "<th></th>";
+					}
+				else{
+					echo "<th>$i</th>";
+					}
+			}
+			echo "<tr></tr>";
 			for($i=1;$i<=$filas;$i++){
 				echo "<th>$abc[$i]</th>\n";
 				
-				for($j=1;$j<=$cols;$j++){
-					
-						if($j == $cols){
-							echo "<td></td>\n";
+				for($j=1;$j<=$cols+1;$j++){
+						//en caso de que la variable J sea mayor al número de columnas, salta a la siguiente línea
+						if($j > $cols){
 							echo "<tr></tr>\n";				
 						}
-						else if ($i % 2 == 0){
-							echo "<td class='pintado'></td>\n";
+						//este else if sirve para pintar un cuadrado una si y una no
+						else if (($i % 2 == 0 && $j % 2 == 0) | ($i % 2 != 0 && $j % 2 != 0)){
+								echo "<td class='pintado'></td>\n";
 						}
+						//crea un cuadrado
 						else{
 							echo "<td></td>\n";
 						}
