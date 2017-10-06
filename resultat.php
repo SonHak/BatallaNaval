@@ -18,6 +18,7 @@
 		$abc = ["","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 		
 		echo "<table>";
+		//bucle para colocar los números en cada columna
 			for($i=0;$i <= $cols;$i++){
 				if($i == 0){
 					echo "<th></th>";
@@ -28,6 +29,7 @@
 			}
 			echo "<tr></tr>";
 			for($i=1;$i<=$filas;$i++){
+				//coloco las letras al lado de cada fila
 				echo "<th>$abc[$i]</th>\n";
 				
 				for($j=1;$j<=$cols+1;$j++){
